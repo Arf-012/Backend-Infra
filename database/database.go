@@ -15,14 +15,13 @@ var DB *gorm.DB
 
 func Connect() {
 	dbUser := os.Getenv("DB_USER")
-	dbPass := os.Getenv("DB_PASS")
+	dbPass := os.Getenv("DB_PASSWORD")
 	dbName := os.Getenv("DB_NAME")
-	dbSocket := os.Getenv("DB_SOCKET")
+	dbSocket := os.Getenv("DB_PORT")
+	dbHost := os.Getenv("DB_HOST")
 
-	dsn := fmt.Sprintf(
-		"%s:%s@unix(%s)/%s?charset=utf8mb4&parseTime=True&loc=Local"+
-			"&timeout=5s&readTimeout=5s&writeTimeout=5s&interpolateParams=true",
-		dbUser, dbPass, dbSocket, dbName,
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Asia%%2FJakarta",
+		dbUser,dbPass,dbHost,dbSocket,dbName,
 	)
 
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{

@@ -20,6 +20,7 @@ func GuestBookToDTO(guest *models.GuestBook) dto.GuestBookResponse {
 		ApprovedAt: guest.ApprovedAt,
 		RequestDate: guest.RequestDate,
 		ShowInCalendar: guest.ShowInCalendar,
+		CreatedAt: guest.CreatedAt,
 	}
 }
 

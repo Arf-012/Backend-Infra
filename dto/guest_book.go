@@ -25,4 +25,5 @@ type GuestBookResponse struct {
 	ApprovedAt 		time.Time 	`json:"approved_at"`
 	RequestDate 	time.Time 	`json:"request_date"`
 	ShowInCalendar 	bool 		`json:"show_in_calendar"`
+	CreatedAt 		time.Time 	`json:"created_at"`
 }

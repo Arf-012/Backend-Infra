@@ -17,6 +17,7 @@ func GuestBookRoutes(router fiber.Router) {
 	guest.Post("/create", handlers.CreateGuest)
 	guest.Post("/edit/:id", handlers.EditGuest)
 	guest.Get("/showAll", handlers.GetAllGuestBook)
+	guest.Get("/export", handlers.ExportGuestBook)
 	guest.Get("/show/:id", handlers.GetGuestBook)
 	guest.Put("/approve/:id", handlers.ApprovedGuest)
 	guest.Put("/reject/:id", handlers.RejectGuestBook)

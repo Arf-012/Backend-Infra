@@ -1,6 +1,8 @@
 package handlers
 
 import (
+	"encoding/csv"
+	"fmt"
 	"go-api-infra/database"
 	"go-api-infra/dto"
 	"go-api-infra/mapper"
@@ -27,6 +29,7 @@ func CreateGuest(c *fiber.Ctx) error {
 		Email: input.Email,
 		Phone: input.Phone,
 		Description: input.Description,
+		Status: "pending",
 	}
 
 	if input.RequestDate != "" {
@@ -82,7 +85,7 @@ func EditGuest(c *fiber.Ctx) error {
 func GetAllGuestBook(c *fiber.Ctx) error {
 	var guests []models.GuestBook	
 
-	if err := database.DB.Find(&guests).Error; err != nil {
+	if err := database.DB.Order("created_at DESC").Find(&guests).Error; err != nil {
 		return c.Status(500).JSON(fiber.Map{
 			"error": "failed to fetch guestbook",
 		})
@@ -178,4 +181,47 @@ func RejectGuestBook(c *fiber.Ctx) error {
 
 	return c.Status(200).JSON(response)
 
+}
+
+func ExportGuestBook(c *fiber.Ctx) error {
+	from := c.Query("from")
+	to := c.Query("to")
+
+	var guests []models.GuestBook
+	query := database.DB.Model(&models.GuestBook{})
+
+	if from != "" && to != "" {
+		query = query.Where("created_at BETWEEN ? AND ?", from+" 00:00:00", to+" 23:59:59")
+	}
+
+	if err := query.Order("created_at DESC").Find(&guests).Error; err != nil {
+		return c.Status(500).JSON(fiber.Map{
+			"error": "failed to fetch data for export",
+		})
+	}
+
+	c.Set("Content-Type", "text/csv")
+	c.Set("Content-Disposition", fmt.Sprintf("attachment; filename=guest_books_%s.csv", time.Now().Format("20060102")))
+
+	writer := csv.NewWriter(c)
+	defer writer.Flush()
+
+	// Header
+	writer.Write([]string{"ID", "Title", "Instance Name", "Contact Person", "Email", "Phone", "Status", "Request Date", "Created At"})
+
+	for _, g := range guests {
+		writer.Write([]string{
+			fmt.Sprintf("%d", g.ID),
+			g.Title,
+			g.InstanceName,
+			g.ContactPerson,
+			g.Email,
+			g.Phone,
+			g.Status,
+			g.RequestDate.Format("2006-01-02"),
+			g.CreatedAt.Format("2006-01-02 15:04:05"),
+		})
+	}
+
+	return nil
 }

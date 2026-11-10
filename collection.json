@@ -1,0 +1,4784 @@
+{
+	"info": {
+		"_postman_id": "ae717c85-7638-41c1-ba49-f641f059cce8",
+		"name": "GO API INFRA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36411182"
+	},
+	"item": [
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "Create News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Makanan MBG Bergizi Gratis",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "dsajoidjsaoidjsaoijsoijdsa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								},
+								{
+									"key": "content",
+									"value": "dsadsdsadsadsdsdsadsadadsa",
+									"type": "text"
+								},
+								{
+									"key": "author_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "excerpt",
+									"value": "dsadsdsadsadsadsadsad",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "draft",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "\"edan\", \"icikiwir\", \"buston\",  \"ghultom\"",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/news/create",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"news",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Makanan MBG Bergizi Gratisssss",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "dsajoidjsaoidjsaoijsoijdsa",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								},
+								{
+									"key": "content",
+									"value": "dsadsdsadsadsdsdsadsadadsa",
+									"type": "text"
+								},
+								{
+									"key": "author_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "excerpt",
+									"value": "dsadsdsadsadsadsadsad",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "archived",
+									"type": "text"
+								},
+								{
+									"key": "view_count",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "go,bun",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/news/update/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"news",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All News",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"name\": \"adeley\",\n    \"email\": \"mitsuhaadly@gmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/news/getAll",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"news",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get News By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"name\": \"adeley\",\n    \"email\": \"mitsuhaadly@gmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/news/get/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"news",
+								"get",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"name\": \"adeley\",\n    \"title\": \"suka negro\",\n    \"content\": \"jdsasdjposjdposadpospodsjpoa\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/news/delete/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"news",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add View",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/news/addView/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"news",
+								"addView",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "archived",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/news/changeStatus/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"news",
+								"changeStatus",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"adeleyss\",\n    \"no_induk\": \"232410003\",\n    \"role\": \"siswa\",\n    \"phone\": \"018208208102\",\n    \"alamat\": \"sdajoidjsaijdsa\",\n    \"tahun_ajaran_mulai\": \"2025\",\n    \"jabatan\": \"siswa\",\n    \"email\": \"mitsuhaadlyss@gmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "adeleyss",
+									"type": "text"
+								},
+								{
+									"key": "no_induk",
+									"value": "232410003",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "siswa",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "018208208102",
+									"type": "text"
+								},
+								{
+									"key": "alamat",
+									"value": "sdajoidjsaijdsa",
+									"type": "text"
+								},
+								{
+									"key": "tahun_ajaran_mulai",
+									"value": "2025",
+									"type": "text"
+								},
+								{
+									"key": "jabatan",
+									"value": " siswa",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mitsuhaadlyss@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "photo_url",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/auth/edit",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"name\": \"adeley\",\n    \"email\": \"mitsuhaadly@gmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/profile",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"name\": \"adeley\",\n    \"email\": \"mitsuhaadlyss@gmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image",
+			"item": [
+				{
+					"name": "Upload Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category",
+									"value": "galeri",
+									"type": "text"
+								},
+								{
+									"key": "file_path",
+									"type": "file",
+									"src": "/home/himro/Downloads/1400309.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/image/add",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"image",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category",
+									"value": "galeri",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "file_path",
+									"type": "file",
+									"src": "/home/himro/Downloads/1400309.jpg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/image/delete/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"image",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Images",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/image/showAll",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"image",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Images by Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/image/show?category=galeri",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"image",
+								"show"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "galeri"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Links",
+			"item": [
+				{
+					"name": "Add Useer Links",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Linkedindsadas",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "https://instagram.comsss",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/home/himro/Downloads/ai ohto.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/user-links/add",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user-links",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Links",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "bukan ig",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "https://instagram.comsss",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-45-16_zen.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/user-links/edit/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user-links",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Link",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "bukan ig",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "https://instagram.comsss",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-45-16_zen.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/user-links/delete/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user-links",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show User Links Self",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/user-links/show/self",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user-links",
+								"show",
+								"self"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forum Section",
+			"item": [
+				{
+					"name": "Create Forum Section",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Forum Alumni",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "forum-alumni",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "forum untukl alumni",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/home/himro/Downloads/1400309.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-section/create",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-section",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Forum Section",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Forum Alumnisasasa",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "forum-alumni",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "forum untukl alumni",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-25-20_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-section/edit/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-section",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Section",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-section/showAll",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-section",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Forum Section",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-section/delete/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-section",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forum Post",
+			"item": [
+				{
+					"name": "Create Forum Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "section_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Gua muak sama penus",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "kalian pernah gasih muak banget sama penus",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Downloads/ai ohto.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-post/create",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Forum Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "section_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Gua muak sama penusssss",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "kalian pernah gasih muak banget sama penus",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Downloads/ai ohto.jpg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-post/edit/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-post",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Forum Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "section_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Gua muak sama penusssss",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "kalian pernah gasih muak banget sama penus",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Downloads/ai ohto.jpg",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-post/delete/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-post",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All Postss",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-post/showAll",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-post",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show post by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-post/show/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-post",
+								"show",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show post by id with replies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-post/post-replies/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-post",
+								"post-replies",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Post Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "approved",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-post/changeStatus",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-post",
+								"changeStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upvote post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-post/upvote/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-post",
+								"upvote",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upvote post Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-post/downvote/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-post",
+								"downvote",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forum Reply",
+			"item": [
+				{
+					"name": "Create Reply",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "post_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "lorem ipsum",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-post/reply/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-post",
+								"reply",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Nested Replies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "post_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "lorem ipsum",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/forum-post/replies/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"forum-post",
+								"replies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Create Events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Pas djsajdsoiajdoisajoia",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "doskpokdposaopdskadsa",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "tamu",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-10-13",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-10-14",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "nirwana",
+									"type": "text"
+								},
+								{
+									"key": "organizer",
+									"value": "devaccto",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-25-20_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/event/create",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Pas dsuahduish",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "lore ipusm",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "tamu",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-10-13",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-10-14",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "nirwana",
+									"type": "text"
+								},
+								{
+									"key": "organizer",
+									"value": "devaccto",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/event/edit/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Pas dsuahduish",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "lore ipusm",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "tamu",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-10-13",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-10-14",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "nirwana",
+									"type": "text"
+								},
+								{
+									"key": "organizer",
+									"value": "devaccto",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/event/delete/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Event By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Pas dsuahduish",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "lore ipusm",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "tamu",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-10-13",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-10-14",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "nirwana",
+									"type": "text"
+								},
+								{
+									"key": "organizer",
+									"value": "devaccto",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/event/show/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event",
+								"show",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Event By Date",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Pas dsuahduish",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "lore ipusm",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "tamu",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-10-13",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-10-14",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "nirwana",
+									"type": "text"
+								},
+								{
+									"key": "organizer",
+									"value": "devaccto",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/event/show/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event",
+								"show",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All Event",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Pas dsuahduish",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "lore ipusm",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "tamu",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-10-13",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-10-14",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "nirwana",
+									"type": "text"
+								},
+								{
+									"key": "organizer",
+									"value": "devaccto",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/event/showAll",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Visibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Pas dsuahduish",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "lore ipusm",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "tamu",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-10-13",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-10-14",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "nirwana",
+									"type": "text"
+								},
+								{
+									"key": "organizer",
+									"value": "devaccto",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/event/showAll",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"event",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Guest Book",
+			"item": [
+				{
+					"name": "Create Guest Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Kedatangan Imam Mahdi",
+									"type": "text"
+								},
+								{
+									"key": "instance_name",
+									"value": "penbus",
+									"type": "text"
+								},
+								{
+									"key": "contact_person",
+									"value": "doskaodka@.omsasa",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "kdskskidkiskia@ds.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "08161287821",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "lorem ipsum dolor sit amet",
+									"type": "text"
+								},
+								{
+									"key": "request_date",
+									"value": "2025-10-13",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/guest-book/create",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"guest-book",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Guest Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Kedatangan Imam Mahdidsa",
+									"type": "text"
+								},
+								{
+									"key": "instance_name",
+									"value": "penbusdasd",
+									"type": "text"
+								},
+								{
+									"key": "contact_person",
+									"value": "doskaodka@.omsasadsads",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "kdskskidkiskia@ds.comdsadas",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "08161287823",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "lorem ipsum dolor sit ametdsadsa",
+									"type": "text"
+								},
+								{
+									"key": "request_date",
+									"value": "2025-10-12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/guest-book/create",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"guest-book",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All Guest Book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Kedatangan Imam Mahdidsa",
+									"type": "text"
+								},
+								{
+									"key": "instance_name",
+									"value": "penbusdasd",
+									"type": "text"
+								},
+								{
+									"key": "contact_person",
+									"value": "doskaodka@.omsasadsads",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "kdskskidkiskia@ds.comdsadas",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "08161287823",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "lorem ipsum dolor sit ametdsadsa",
+									"type": "text"
+								},
+								{
+									"key": "request_date",
+									"value": "2025-10-12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/guest-book/showAll",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"guest-book",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Guest Book By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Kedatangan Imam Mahdidsa",
+									"type": "text"
+								},
+								{
+									"key": "instance_name",
+									"value": "penbusdasd",
+									"type": "text"
+								},
+								{
+									"key": "contact_person",
+									"value": "doskaodka@.omsasadsads",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "kdskskidkiskia@ds.comdsadas",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "08161287823",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "lorem ipsum dolor sit ametdsadsa",
+									"type": "text"
+								},
+								{
+									"key": "request_date",
+									"value": "2025-10-12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/guest-book/show/8",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"guest-book",
+								"show",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Approved Guest Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Kedatangan Imam Mahdidsa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "instance_name",
+									"value": "penbusdasd",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "contact_person",
+									"value": "doskaodka@.omsasadsads",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "kdskskidkiskia@ds.comdsadas",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "08161287823",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "lorem ipsum dolor sit ametdsadsa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "request_date",
+									"value": "2025-10-12",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "approved",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/guest-book/approve/7",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"guest-book",
+								"approve",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reject Guest Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Kedatangan Imam Mahdidsa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "instance_name",
+									"value": "penbusdasd",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "contact_person",
+									"value": "doskaodka@.omsasadsads",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "kdskskidkiskia@ds.comdsadas",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "08161287823",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "lorem ipsum dolor sit ametdsadsa",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "request_date",
+									"value": "2025-10-12",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "approved",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "rejection_reason",
+									"value": "lo ngger bangsat",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/guest-book/reject/7",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"guest-book",
+								"reject",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mading",
+			"item": [
+				{
+					"name": "Create Mading",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "pikri lutung",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "infographic",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "adsoapkopsakjinaijhoiasj",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/mading/create",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"mading",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Mading",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "pikri lutungss",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "infographic",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "adsoapkopsakjinaijhoiasj",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/mading/edit/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"mading",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Mading",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "pikri lutungss",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "infographic",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "adsoapkopsakjinaijhoiasj",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/mading/show/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"mading",
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All Mading",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "pikri lutungss",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "infographic",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "adsoapkopsakjinaijhoiasj",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-22-46_kitty.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/mading/showAll",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"mading",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "Create Teacher",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nig",
+									"value": "09832101",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "Adly Fahreza",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "guru",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "B. Inggris",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "saya guru bahasa inggris",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/teacher/create",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Teacher",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nig",
+									"value": "09832101",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "Adly Fahrezaz",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "guru",
+									"type": "text"
+								},
+								{
+									"key": "subject",
+									"value": "B. Inggris",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "saya guru bahasa inggris",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/teacher/edit/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All Teachers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/teacher/showAll",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Teacher",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/teacher/delete/2",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"teacher",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Eskul",
+			"item": [
+				{
+					"name": "Create Eskul",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "programming",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "ini eskul programming",
+									"type": "text"
+								},
+								{
+									"key": "pembina_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/eskul/create",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"eskul",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Eskul",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "progayming",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "ini eskul programming",
+									"type": "text"
+								},
+								{
+									"key": "pembina_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/eskul/edit/5",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"eskul",
+								"edit",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Eskul By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "progayming",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "ini eskul programming",
+									"type": "text"
+								},
+								{
+									"key": "pembina_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/eskul/show/5",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"eskul",
+								"show",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All Eskul",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "progayming",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "ini eskul programming",
+									"type": "text"
+								},
+								{
+									"key": "pembina_id",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/eskul/showAll",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"eskul",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Achievement",
+			"item": [
+				{
+					"name": "Create Achievement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "juara 1 JHIC",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "dsajdsjpoadjsaodjposja",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/swappy-20251015-220044.png"
+								},
+								{
+									"key": "achievement_date",
+									"value": "2025-10-03",
+									"type": "text"
+								},
+								{
+									"key": "news_id",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/achievement/create",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"achievement",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Achievement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "juara 1 JHIC",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "sdsadks",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-26-05_kitty.png"
+								},
+								{
+									"key": "achievement_date",
+									"value": "2025-10-03",
+									"type": "text"
+								},
+								{
+									"key": "news_id",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/achievement/edit/4",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"achievement",
+								"edit",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Achievement by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "juara 1 JHIC",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "sdsadks",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-26-05_kitty.png"
+								},
+								{
+									"key": "achievement_date",
+									"value": "2025-10-03",
+									"type": "text"
+								},
+								{
+									"key": "news_id",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/achievement/show/4",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"achievement",
+								"show",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All Achievement",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "juara 1 JHIC",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "sdsadks",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-26-05_kitty.png"
+								},
+								{
+									"key": "achievement_date",
+									"value": "2025-10-03",
+									"type": "text"
+								},
+								{
+									"key": "news_id",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/achievement/showAll",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"achievement",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Achievement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "juara 1 JHIC",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "sdsadks",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-26-05_kitty.png"
+								},
+								{
+									"key": "achievement_date",
+									"value": "2025-10-03",
+									"type": "text"
+								},
+								{
+									"key": "news_id",
+									"value": "12",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/achievement/delete/3",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"achievement",
+								"delete",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Portal",
+			"item": [
+				{
+					"name": "Create Portal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN_2}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Instagram",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "intagram penus",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/home/himro/Downloads/wallhaven-5dww19.png"
+								},
+								{
+									"key": "category",
+									"value": "social media",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "dsoaodsoai",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/api/v1/portal/create",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"portal",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Portal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Instagram",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "intagram penus kali",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/home/himro/Downloads/1400309.jpg"
+								},
+								{
+									"key": "category",
+									"value": "social media",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "dsoaodsoai",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/portal/edit/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"portal",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Portal By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Instagram",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "intagram penus kali",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/home/himro/Downloads/1400309.jpg"
+								},
+								{
+									"key": "category",
+									"value": "social media",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "dsoaodsoai",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/portal/show/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"portal",
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All Portal",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Instagram",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "intagram penus kali",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/home/himro/Downloads/1400309.jpg"
+								},
+								{
+									"key": "category",
+									"value": "social media",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "dsoaodsoai",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/portal/showAll",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"portal",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Portal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Instagram",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "intagram penus kali",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/home/himro/Downloads/1400309.jpg"
+								},
+								{
+									"key": "category",
+									"value": "social media",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "dsoaodsoai",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/portal/delete/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"portal",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Industry",
+			"item": [
+				{
+					"name": "Create Industry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sertifikasi guru",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/swappy-20251016-214909.png"
+								},
+								{
+									"key": "website",
+									"value": "https://dssd.com",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "disjaodjsoiajdoisajoidjsjia",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/industry/create",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"industry",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Industry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sertifikasi gurudas",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/swappy-20251016-214909.png"
+								},
+								{
+									"key": "website",
+									"value": "https://dssd.com",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "disjaodjsoiajdoisajoidjsjia",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/industry/edit/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"industry",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Industry By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sertifikasi gurudas",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/swappy-20251016-214909.png"
+								},
+								{
+									"key": "website",
+									"value": "https://dssd.com",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "disjaodjsoiajdoisajoidjsjia",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/industry/show/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"industry",
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Industry",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sertifikasi gurudas",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/swappy-20251016-214909.png"
+								},
+								{
+									"key": "website",
+									"value": "https://dssd.com",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "disjaodjsoiajdoisajoidjsjia",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/industry/showAll",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"industry",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Certification",
+			"item": [
+				{
+					"name": "Create Certificate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "sertifikat bodong",
+									"type": "text"
+								},
+								{
+									"key": "issuer",
+									"value": "dikodong",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "dsadlksdlksmlkajdjsadsa",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-26-17_kitty.png"
+								},
+								{
+									"key": "certification_number",
+									"value": "cert_djskadklsja",
+									"type": "text"
+								},
+								{
+									"key": "issue_date",
+									"value": "2025-12-03",
+									"type": "text"
+								},
+								{
+									"key": "expiry_date",
+									"value": "2026-12-03",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/certification/create",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"certification",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Certificate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "sertifikat bodong",
+									"type": "text"
+								},
+								{
+									"key": "issuer",
+									"value": "dikodong",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "dsadlksdlksmlkajdjsadsa",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-26-17_kitty.png"
+								},
+								{
+									"key": "certification_number",
+									"value": "cert_djskadklsjadsadsdsa",
+									"type": "text"
+								},
+								{
+									"key": "issue_date",
+									"value": "2025-12-03",
+									"type": "text"
+								},
+								{
+									"key": "expiry_date",
+									"value": "2026-12-03",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/certification/edit/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"certification",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Certificate By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "sertifikat bodong",
+									"type": "text"
+								},
+								{
+									"key": "issuer",
+									"value": "dikodong",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "dsadlksdlksmlkajdjsadsa",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-26-17_kitty.png"
+								},
+								{
+									"key": "certification_number",
+									"value": "cert_djskadklsjadsadsdsa",
+									"type": "text"
+								},
+								{
+									"key": "issue_date",
+									"value": "2025-12-03",
+									"type": "text"
+								},
+								{
+									"key": "expiry_date",
+									"value": "2026-12-03",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/certification/show/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"certification",
+								"show",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All Certificate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "sertifikat bodong",
+									"type": "text"
+								},
+								{
+									"key": "issuer",
+									"value": "dikodong",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "dsadlksdlksmlkajdjsadsa",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-26-17_kitty.png"
+								},
+								{
+									"key": "certification_number",
+									"value": "cert_djskadklsjadsadsdsa",
+									"type": "text"
+								},
+								{
+									"key": "issue_date",
+									"value": "2025-12-03",
+									"type": "text"
+								},
+								{
+									"key": "expiry_date",
+									"value": "2026-12-03",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/certification/showAll",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"certification",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Certificate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "sertifikat bodong",
+									"type": "text"
+								},
+								{
+									"key": "issuer",
+									"value": "dikodong",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "dsadlksdlksmlkajdjsadsa",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/Screenshot_06-Oct_14-26-17_kitty.png"
+								},
+								{
+									"key": "certification_number",
+									"value": "cert_djskadklsjadsadsdsa",
+									"type": "text"
+								},
+								{
+									"key": "issue_date",
+									"value": "2025-12-03",
+									"type": "text"
+								},
+								{
+									"key": "expiry_date",
+									"value": "2026-12-03",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/certification/delete/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"certification",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Testimonial",
+			"item": [
+				{
+					"name": "Create Testimonial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Adeli",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "ceo",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/swappy-20251016-214909.png"
+								},
+								{
+									"key": "testimonial",
+									"value": "great",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/testimonial/create",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"testimonial",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Testimonial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Adelidsads",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "ceo",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/swappy-20251016-214909.png"
+								},
+								{
+									"key": "testimonial",
+									"value": "great",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/testimonial/edit/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"testimonial",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Testimonial By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Adelidsads",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "ceo",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/swappy-20251016-214909.png"
+								},
+								{
+									"key": "testimonial",
+									"value": "great",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/testimonial/show/3",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"testimonial",
+								"show",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show All Testimonial",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Adelidsads",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "ceo",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/swappy-20251016-214909.png"
+								},
+								{
+									"key": "testimonial",
+									"value": "great",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/testimonial/showAll",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"testimonial",
+								"showAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Testimonial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{USER_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Adelidsads",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "ceo",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/home/himro/Pictures/Screenshots/swappy-20251016-214909.png"
+								},
+								{
+									"key": "testimonial",
+									"value": "great",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/api/v1/testimonial/delete/1",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"testimonial",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public Request Example",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LOCAL}}/api/v1/public/image/showAll",
+					"host": [
+						"{{LOCAL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"public",
+						"image",
+						"showAll"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://127.0.0.1:3000"
+		},
+		{
+			"key": "USER_TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1pdHN1aGFhZGx5QGdtYWlsLmNvbSIsImV4cCI6MTc1ODAyNTIzMiwiaWQiOjF9.dRFCm_ncJoQSXFn3dWiIKw0V4b4tfEcr_S10F9AXF0M"
+		},
+		{
+			"key": "LOCAL",
+			"value": ""
+		},
+		{
+			"key": "ADELI",
+			"value": ""
+		},
+		{
+			"key": "USER_TOKEN_2",
+			"value": ""
+		},
+		{
+			"key": "INFRA",
+			"value": ""
+		}
+	]
+}
