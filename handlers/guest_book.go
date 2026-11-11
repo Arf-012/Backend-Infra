@@ -7,9 +7,11 @@ import (
 	"go-api-infra/dto"
 	"go-api-infra/mapper"
 	"go-api-infra/models"
+	"os"
 	"time"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/xuri/excelize/v2"
 )
 
 
@@ -224,4 +226,65 @@ func ExportGuestBook(c *fiber.Ctx) error {
 	}
 
 	return nil
+}
+
+func ExportGuestBookExcel(c *fiber.Ctx) error {
+	from := c.Query("from")
+	to := c.Query("to")
+
+	var guests []models.GuestBook
+	query := database.DB.Model(&models.GuestBook{})
+
+	if from != "" && to != "" {
+		query = query.Where("created_at BETWEEN ? AND ?", from+" 00:00:00", to+" 23:59:59")
+	}
+
+	if err := query.Order("created_at DESC").Find(&guests).Error; err != nil {
+		return c.Status(500).JSON(fiber.Map{
+			"error": "failed to fetch data for export",
+		})
+	}
+
+	templatePath := "Rekap Buku Tamu Digital.xlsx"
+	f, err := excelize.OpenFile(templatePath)
+	if err != nil {
+		// Jika template tidak ada, buat file baru saja sebagai fallback
+		f = excelize.NewFile()
+	}
+	defer f.Close()
+
+	sheetName := "Sheet1"
+	// Memastikan kita menulis di sheet yang benar, atau ambil sheet pertama
+	index, _ := f.GetSheetIndex(sheetName)
+	if index == -1 {
+		sheetName = f.GetSheetName(0)
+	}
+
+	// Mulai mengisi data dari baris tertentu, misalnya baris ke-2 (asumsi baris 1 adalah header di template)
+	startRow := 2
+	for i, g := range guests {
+		row := startRow + i
+		f.SetCellValue(sheetName, fmt.Sprintf("A%d", row), i+1)
+		f.SetCellValue(sheetName, fmt.Sprintf("B%d", row), g.Title)
+		f.SetCellValue(sheetName, fmt.Sprintf("C%d", row), g.InstanceName)
+		f.SetCellValue(sheetName, fmt.Sprintf("D%d", row), g.ContactPerson)
+		f.SetCellValue(sheetName, fmt.Sprintf("E%d", row), g.Email)
+		f.SetCellValue(sheetName, fmt.Sprintf("F%d", row), g.Phone)
+		f.SetCellValue(sheetName, fmt.Sprintf("G%d", row), g.Status)
+		f.SetCellValue(sheetName, fmt.Sprintf("H%d", row), g.RequestDate.Format("2006-01-02"))
+		f.SetCellValue(sheetName, fmt.Sprintf("I%d", row), g.CreatedAt.Format("2006-01-02 15:04:05"))
+	}
+
+	fileName := fmt.Sprintf("rekap_guest_books_%s.xlsx", time.Now().Format("20060102"))
+	
+	// Simpan ke file temporary untuk dikirim
+	tmpPath := "/tmp/" + fileName
+	if err := f.SaveAs(tmpPath); err != nil {
+		return c.Status(500).JSON(fiber.Map{
+			"error": "failed to generate excel file",
+		})
+	}
+	defer os.Remove(tmpPath)
+
+	return c.Download(tmpPath, fileName)
 }
