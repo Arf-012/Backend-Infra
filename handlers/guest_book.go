@@ -224,24 +224,32 @@ func ExportGuestBookExcel(c *fiber.Ctx) error {
 	// Mulai mengisi data dari baris tertentu, misalnya baris ke-2 (asumsi baris 1 adalah header di template)
 	startRow := 2
 	
-	// Set Header Manual agar sama dengan template jika template baru/kosong
-	headers := []string{"No", "Judul", "Nama Instansi", "Kontak Person", "Email", "Telepon", "Status", "Tanggal Permohonan", "Dibuat Pada"}
+	// Style untuk header: Background Biru, Teks Putih, Font Bold
+	headerStyle, _ := f.NewStyle(&excelize.Style{
+		Fill: excelize.Fill{Type: "pattern", Color: []string{"#0000FF"}, Pattern: 1},
+		Font: &excelize.Font{Bold: true, Color: "#FFFFFF"},
+		Alignment: &excelize.Alignment{Horizontal: "center"},
+	})
+
+	// Header sesuai permintaan
+	headers := []string{"NO", "Tanggal", "Waktu", "Judul", "Instansi", "Nama", "Email", "Nomor Whatsapp", "Deskripsi"}
 	for i, h := range headers {
 		cell, _ := excelize.CoordinatesToCellName(i+1, 1)
 		f.SetCellValue(sheetName, cell, h)
+		f.SetCellStyle(sheetName, cell, cell, headerStyle)
 	}
 
 	for i, g := range guests {
 		row := startRow + i
 		f.SetCellValue(sheetName, fmt.Sprintf("A%d", row), i+1)
-		f.SetCellValue(sheetName, fmt.Sprintf("B%d", row), g.Title)
-		f.SetCellValue(sheetName, fmt.Sprintf("C%d", row), g.InstanceName)
-		f.SetCellValue(sheetName, fmt.Sprintf("D%d", row), g.ContactPerson)
-		f.SetCellValue(sheetName, fmt.Sprintf("E%d", row), g.Email)
-		f.SetCellValue(sheetName, fmt.Sprintf("F%d", row), g.Phone)
-		f.SetCellValue(sheetName, fmt.Sprintf("G%d", row), g.Status)
-		f.SetCellValue(sheetName, fmt.Sprintf("H%d", row), g.RequestDate.Format("2006-01-02"))
-		f.SetCellValue(sheetName, fmt.Sprintf("I%d", row), g.CreatedAt.Format("2006-01-02 15:04:05"))
+		f.SetCellValue(sheetName, fmt.Sprintf("B%d", row), g.CreatedAt.Format("2006-01-02"))
+		f.SetCellValue(sheetName, fmt.Sprintf("C%d", row), g.CreatedAt.Format("15:04:05"))
+		f.SetCellValue(sheetName, fmt.Sprintf("D%d", row), g.Title)
+		f.SetCellValue(sheetName, fmt.Sprintf("E%d", row), g.InstanceName)
+		f.SetCellValue(sheetName, fmt.Sprintf("F%d", row), g.ContactPerson)
+		f.SetCellValue(sheetName, fmt.Sprintf("G%d", row), g.Email)
+		f.SetCellValue(sheetName, fmt.Sprintf("H%d", row), g.Phone)
+		f.SetCellValue(sheetName, fmt.Sprintf("I%d", row), g.Description)
 	}
 
 	fileName := fmt.Sprintf("rekap_guest_books_%s.xlsx", time.Now().Format("20060102"))
