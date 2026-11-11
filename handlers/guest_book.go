@@ -186,46 +186,7 @@ func RejectGuestBook(c *fiber.Ctx) error {
 }
 
 func ExportGuestBook(c *fiber.Ctx) error {
-	from := c.Query("from")
-	to := c.Query("to")
-
-	var guests []models.GuestBook
-	query := database.DB.Model(&models.GuestBook{})
-
-	if from != "" && to != "" {
-		query = query.Where("created_at BETWEEN ? AND ?", from+" 00:00:00", to+" 23:59:59")
-	}
-
-	if err := query.Order("created_at DESC").Find(&guests).Error; err != nil {
-		return c.Status(500).JSON(fiber.Map{
-			"error": "failed to fetch data for export",
-		})
-	}
-
-	c.Set("Content-Type", "text/csv")
-	c.Set("Content-Disposition", fmt.Sprintf("attachment; filename=guest_books_%s.csv", time.Now().Format("20060102")))
-
-	writer := csv.NewWriter(c)
-	defer writer.Flush()
-
-	// Header
-	writer.Write([]string{"ID", "Title", "Instance Name", "Contact Person", "Email", "Phone", "Status", "Request Date", "Created At"})
-
-	for _, g := range guests {
-		writer.Write([]string{
-			fmt.Sprintf("%d", g.ID),
-			g.Title,
-			g.InstanceName,
-			g.ContactPerson,
-			g.Email,
-			g.Phone,
-			g.Status,
-			g.RequestDate.Format("2006-01-02"),
-			g.CreatedAt.Format("2006-01-02 15:04:05"),
-		})
-	}
-
-	return nil
+	return ExportGuestBookExcel(c)
 }
 
 func ExportGuestBookExcel(c *fiber.Ctx) error {
@@ -262,6 +223,14 @@ func ExportGuestBookExcel(c *fiber.Ctx) error {
 
 	// Mulai mengisi data dari baris tertentu, misalnya baris ke-2 (asumsi baris 1 adalah header di template)
 	startRow := 2
+	
+	// Set Header Manual agar sama dengan template jika template baru/kosong
+	headers := []string{"No", "Judul", "Nama Instansi", "Kontak Person", "Email", "Telepon", "Status", "Tanggal Permohonan", "Dibuat Pada"}
+	for i, h := range headers {
+		cell, _ := excelize.CoordinatesToCellName(i+1, 1)
+		f.SetCellValue(sheetName, cell, h)
+	}
+
 	for i, g := range guests {
 		row := startRow + i
 		f.SetCellValue(sheetName, fmt.Sprintf("A%d", row), i+1)
