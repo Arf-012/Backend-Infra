@@ -42,13 +42,13 @@ func CreateGuest(c *fiber.Ctx) error {
 	}
 
 
-	if err := database.DB.Create(&guestbook).Error; err != nil {	
+	if err := database.DB.Create(&guestbook).Error; err != nil {
 		return c.Status(500).JSON(fiber.Map{
 			"error": "failed to create guest book",
 		})
 	}
 
-	response := mapper.GuestBookToDTO(&guestbook) 
+	response := mapper.GuestBookToDTO(&guestbook)
 
 	return c.Status(200).JSON(response)
 }
@@ -80,12 +80,12 @@ func EditGuest(c *fiber.Ctx) error {
 	}
 
 	response := mapper.GuestBookToDTO(&guest)
-	
+
 	return c.Status(200).JSON(response)
 }
 
 func GetAllGuestBook(c *fiber.Ctx) error {
-	var guests []models.GuestBook	
+	var guests []models.GuestBook
 
 	if err := database.DB.Order("created_at DESC").Find(&guests).Error; err != nil {
 		return c.Status(500).JSON(fiber.Map{
@@ -141,7 +141,7 @@ func ApprovedGuest(c *fiber.Ctx) error {
 	if err := database.DB.First(&guest, id).Error; err != nil {
 		return c.Status(200).JSON(fiber.Map{
 			"error": "failed to fetch",
-		})	
+		})
 	}
 
 
@@ -223,7 +223,7 @@ func ExportGuestBookExcel(c *fiber.Ctx) error {
 
 	// Mulai mengisi data dari baris tertentu, misalnya baris ke-2 (asumsi baris 1 adalah header di template)
 	startRow := 2
-	
+
 	// Style untuk header: Background Biru, Teks Putih, Font Bold
 	headerStyle, _ := f.NewStyle(&excelize.Style{
 		Fill: excelize.Fill{Type: "pattern", Color: []string{"#0000FF"}, Pattern: 1},
@@ -232,7 +232,7 @@ func ExportGuestBookExcel(c *fiber.Ctx) error {
 	})
 
 	// Header sesuai permintaan
-	headers := []string{"NO", "Tanggal", "Waktu", "Judul", "Instansi", "Nama", "Email", "Nomor Whatsapp", "Deskripsi"}
+	headers := []string{"NO", "Tanggal", "Waktu", "Judul", "Nama/Instansi", "Nama Yang Dituju", "Email", "Nomor Whatsapp", "Deskripsi"}
 	for i, h := range headers {
 		cell, _ := excelize.CoordinatesToCellName(i+1, 1)
 		f.SetCellValue(sheetName, cell, h)
@@ -253,7 +253,7 @@ func ExportGuestBookExcel(c *fiber.Ctx) error {
 	}
 
 	fileName := fmt.Sprintf("rekap_guest_books_%s.xlsx", time.Now().Format("20060102"))
-	
+
 	// Simpan ke file temporary untuk dikirim
 	tmpPath := "/tmp/" + fileName
 	if err := f.SaveAs(tmpPath); err != nil {
